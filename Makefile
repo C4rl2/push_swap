@@ -6,7 +6,7 @@
 #    By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/04 16:24:58 by cafraixe          #+#    #+#              #
-#    Updated: 2023/06/30 13:47:12 by cafraixe         ###   ########.fr        #
+#    Updated: 2023/06/30 19:41:55 by cafraixe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,12 +27,11 @@ SRCS		         =	main.c \
 						rules3.c \
 						sort_small_stack.c \
 						sort_big_stack.c \
-						sort_big_stack2.c \
 
 OBJS				= ${SRCS:.c=.o}
 
 CC					= gcc
-CFLAGS  			= -Wall -Wextra -Werror --leak-check=full #-fsanitize=address 
+CFLAGS  			= -Wall -Wextra -Werror -g3 #-fsanitize=address 
 RM					= rm -f
 
 OBJ 				= $(OBJS)

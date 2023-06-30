@@ -6,17 +6,18 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 18:45:01 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/30 11:50:50 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/06/30 16:51:47 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <string.h>
 
 t_push_swap	*ft_lstnew(char *s)
 {
 	t_push_swap	*tmp;
 
-	tmp = malloc(sizeof(t_push_swap));
+	tmp = malloc(sizeof(t_push_swap)); //leaks
 	if (tmp == NULL)
 		return (NULL);
 	tmp->index = -1;
@@ -30,7 +31,7 @@ t_push_swap	*ft_lstnewa(int value)
 {
 	t_push_swap	*tmp;
 
-	tmp = malloc(sizeof(t_push_swap));
+	tmp = malloc(sizeof(t_push_swap)); //leaks
 	if (tmp == NULL)
 		return (NULL);
 	tmp->index = -1;
@@ -66,7 +67,7 @@ char	*ft_strdup(char *s1)
 
 	i = 0;
 	len = ft_strlen(s1);
-	copy = (char *)malloc(sizeof(char) * len + 1);
+	copy = malloc(sizeof(char) * (len + 1));
 	if (copy == NULL)
 		return (NULL);
 	while (s1[i] != '\0')

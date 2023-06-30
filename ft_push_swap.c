@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:30:04 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/30 12:04:46 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/06/30 19:44:54 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,4 @@ void	ft_push_swap(t_push_swap *a_list)
 		sort_stack_500(&a_list, &b_list);
 	else
 		error_msg(ERRTMN, a_list, 0);
-	// printf("\nA LIST :\n");
-	// print_list(a_list);
-	// printf("\nB LIST :\n");
-	// print_list(b_list);
 }

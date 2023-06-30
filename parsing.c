@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:27:47 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/30 13:44:02 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/06/30 19:41:35 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	error_msg(char *str, t_push_swap *list, t_push_swap *a_list)
 		ft_putstr_fd("Error\n", 2);
 		ft_putstr_fd(str, 2);
 	}
-	// system("leaks push_swap");
+	system("leaks push_swap");
 	exit(1);
 }
 
@@ -43,11 +43,10 @@ void	clear_list(t_push_swap **list)
 		tmp = tmp->next;
 		free(to_del);
 	}
-	// *list = NULL;
-	// free(head);
+	*list = NULL;
 }
 
-void	clear_a_list(t_push_swap **list)
+void	clear_a_list(t_push_swap **list) //leaks
 {
 	t_push_swap	*tmp;
 	t_push_swap	*next;
@@ -60,8 +59,7 @@ void	clear_a_list(t_push_swap **list)
 		free(tmp);
 		tmp = next;
 	}
-	// *list = NULL;
-	free(*list);
+	*list = NULL;
 }
 
 
@@ -105,6 +103,6 @@ int	duplicates(t_push_swap *a_list, t_push_swap *list)
 		a_list = a_list->next;
 	}
 	a_list = begina;
-	clear_list(&list);
+	clear_a_list(&list);
 	return (1);
 }

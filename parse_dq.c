@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 16:09:48 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/21 19:38:30 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/06/30 18:57:29 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	secure_atoi(char *s, t_push_swap *list, t_push_swap *a_list)
 	return (ft_atoi(s));
 }
 
-char	*clean_str(char *s)
+char	*clean_str(char *s, t_push_swap *list, t_push_swap *a_list)
 {
 	int		i;
 	int		j;
@@ -56,7 +56,7 @@ char	*clean_str(char *s)
 
 	i = 0;
 	j = 0;
-	new_s = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	new_s = malloc(sizeof(char) * (ft_strlen(s) + 1)); //leaks
 	while (s[i])
 	{
 		if ((s[i] >= '0' && s[i] <= '9') || s[i] == 32 || s[i] == '-')
@@ -66,7 +66,10 @@ char	*clean_str(char *s)
 			j++;
 		}
 		else
-			i++;
+		{
+			clear_list(&a_list);
+			error_msg(ERRLTR, 0, list);
+		}	
 	}
 	new_s[j] = '\0';
 	return (new_s);
@@ -109,11 +112,12 @@ t_push_swap	*final_fill(t_push_swap *list)
 	tmp_list = list;
 	while (tmp_list)
 	{
-		tmp = clean_str(tmp_list->str);
+		tmp = clean_str(tmp_list->str, list, a_list);
 		a_list = fill_a(tmp, a_list, list);
-		free(tmp);
 		tmp_list = tmp_list->next;
+		free(tmp);
 		i++;
 	}
+	// clear_list(&list);
 	return (a_list);
 }
