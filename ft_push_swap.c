@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:30:04 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/30 19:44:54 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/01 20:09:48 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,21 @@ void	ft_push_swap(t_push_swap *a_list)
 	t_push_swap	*b_list;
 
 	b_list = NULL;
-	if (ft_lstsize(a_list) == 1)
-		return ;
-	else if (ft_lstsize(a_list) == 2)
-		sort_stack_2(a_list);
-	else if (ft_lstsize(a_list) == 3)
-		sort_stack_3(&a_list);
-	else if (ft_lstsize(a_list) <= 5)
-		sort_stack_4(&a_list, &b_list);
-	else if (ft_lstsize(a_list) <= 500)
-		sort_stack_500(&a_list, &b_list);
+	if (is_a_sorted(&a_list) != 1)
+	{
+		if (ft_lstsize(a_list) == 1)
+			return ;
+		else if (ft_lstsize(a_list) == 2)
+			sort_stack_2(a_list);
+		else if (ft_lstsize(a_list) == 3)
+			sort_stack_3(&a_list);
+		else if (ft_lstsize(a_list) <= 5)
+			sort_stack_4(&a_list, &b_list);
+		else if (ft_lstsize(a_list) <= 500)
+			sort_stack_500(&a_list, &b_list);
+		else
+			error_msg(ERRTMN, a_list, 0);
+	}
 	else
-		error_msg(ERRTMN, a_list, 0);
+		error_msg(0, a_list, 0);
 }

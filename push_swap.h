@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:28:26 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/29 16:01:37 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/01 20:09:40 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define ERRLTR "Non-numbers in the arguments.\n"
 # define ERRMXMN "Limits of an int not respected.\n"
 # define ERRTMN "too much arguments, max 500 numbers\n"
-# define ERRSPLIT "Empty double quotes."
+# define ERRSPLIT "Empty double quotes.\n"
 
 typedef struct s_push_swap
 {
@@ -32,7 +32,6 @@ typedef struct s_push_swap
 	char				*str;
 	struct s_push_swap	*next;
 }	t_push_swap;
-
 
 //PARSING
 int			ft_strlen(char *s);
@@ -77,5 +76,6 @@ void		sort_stack_5(t_push_swap **a_list, t_push_swap **b_list);
 //sort big stack
 void		minimum(t_push_swap **a_list);
 void		sort_stack_500(t_push_swap **a_list, t_push_swap **b_list);
+int			is_a_sorted(t_push_swap **a_list);
 
 #endif

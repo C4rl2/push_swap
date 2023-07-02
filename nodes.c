@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 18:45:01 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/30 16:51:47 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/01 18:17:24 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_push_swap	*ft_lstnew(char *s)
 {
 	t_push_swap	*tmp;
 
-	tmp = malloc(sizeof(t_push_swap)); //leaks
+	tmp = malloc(sizeof(t_push_swap));
 	if (tmp == NULL)
 		return (NULL);
 	tmp->index = -1;
@@ -31,7 +31,7 @@ t_push_swap	*ft_lstnewa(int value)
 {
 	t_push_swap	*tmp;
 
-	tmp = malloc(sizeof(t_push_swap)); //leaks
+	tmp = malloc(sizeof(t_push_swap));
 	if (tmp == NULL)
 		return (NULL);
 	tmp->index = -1;

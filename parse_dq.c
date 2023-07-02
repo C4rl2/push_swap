@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 16:09:48 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/30 18:57:29 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/01 18:18:23 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*clean_str(char *s, t_push_swap *list, t_push_swap *a_list)
 
 	i = 0;
 	j = 0;
-	new_s = malloc(sizeof(char) * (ft_strlen(s) + 1)); //leaks
+	new_s = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	while (s[i])
 	{
 		if ((s[i] >= '0' && s[i] <= '9') || s[i] == 32 || s[i] == '-')

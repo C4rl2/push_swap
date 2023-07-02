@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:27:47 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/30 19:41:35 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/02 16:39:12 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,9 @@ void	error_msg(char *str, t_push_swap *list, t_push_swap *a_list)
 void	clear_list(t_push_swap **list)
 {
 	t_push_swap	*tmp;
-	t_push_swap	*head;
 	t_push_swap	*to_del;
 
 	tmp = *list;
-	head = *list;
 	if (*list == NULL)
 		return ;
 	while (tmp != NULL)
@@ -46,7 +44,7 @@ void	clear_list(t_push_swap **list)
 	*list = NULL;
 }
 
-void	clear_a_list(t_push_swap **list) //leaks
+void	clear_a_list(t_push_swap **list)
 {
 	t_push_swap	*tmp;
 	t_push_swap	*next;
@@ -61,7 +59,6 @@ void	clear_a_list(t_push_swap **list) //leaks
 	}
 	*list = NULL;
 }
-
 
 int	first_parse(char **av)
 {

@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 21:06:42 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/30 19:03:37 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/01 18:20:20 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ra(t_push_swap **a_list)
 {
 	t_push_swap	*node;
-	t_push_swap *tmp;
+	t_push_swap	*tmp;
 
 	node = NULL;
 	node = *a_list;
@@ -31,7 +31,7 @@ void	ra(t_push_swap **a_list)
 void	rb(t_push_swap **b_list)
 {
 	t_push_swap	*node;
-	t_push_swap *tmp;
+	t_push_swap	*tmp;
 
 	node = NULL;
 	node = *b_list;
