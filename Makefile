@@ -6,7 +6,7 @@
 #    By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/04 16:24:58 by cafraixe          #+#    #+#              #
-#    Updated: 2023/07/01 19:44:16 by cafraixe         ###   ########.fr        #
+#    Updated: 2023/07/03 12:21:02 by cafraixe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRCS		         =	main.c \
 OBJS				= ${SRCS:.c=.o}
 
 CC					= gcc
-CFLAGS  			= -Wall -Wextra -Werror -g3 #-fsanitize=address 
+CFLAGS  			= -Wall -Wextra -Werror
 RM					= rm -f
 
 OBJ 				= $(OBJS)

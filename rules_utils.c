@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 17:06:36 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/18 15:53:03 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/03 12:23:43 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	delone(t_push_swap *lst)
 void	ft_lstadd_front(t_push_swap **lst, t_push_swap *new)
 {
 	new->next = *lst;
-		*lst = new;
+	*lst = new;
 }

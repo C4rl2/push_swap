@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 15:37:40 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/07/02 16:44:50 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/03 12:18:29 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,6 @@ int	is_a_sorted(t_push_swap **a_list)
 	tmp = *a_list;
 	while (tmp->next)
 	{
-		//printf("\n\n|%i| > |%i|\n\n", tmp->value, tmp->next->value);
-		//char	c;
-		//read(0, &c, 1);
 		if (tmp->value > tmp->next->value)
 			return (0);
 		else
@@ -76,9 +73,6 @@ void	sort(t_push_swap **a_list, t_push_swap **b_list)
 			pa(a_list, b_list);
 		bit++;
 		size_a = ft_lstsize(*a_list);
-		//printf("\n\nindex = |%i|\n\n", (*a_list)->index);
-		//char	c;
-		//read(0, &c, 1);
 	}
 }
 
@@ -86,7 +80,4 @@ void	sort_stack_500(t_push_swap **a_list, t_push_swap **b_list)
 {
 	index_lst(a_list);
 	sort(a_list, b_list);
-	// print_list(*a_list);
-	// char	c;
-	// read(0, &c, 1);
 }

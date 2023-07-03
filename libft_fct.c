@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:58:04 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/06 17:34:51 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/03 12:23:04 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_putstr_fd(char *s, int fd)
 	if (s)
 	{
 		while (*s)
-		{	
+		{
 			write(fd, s, 1);
 			s++;
 		}

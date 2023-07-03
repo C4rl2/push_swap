@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 16:18:04 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/06/21 19:26:33 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/03 12:22:38 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_count_words(char *s, char c)
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
-				i++;
+			i++;
 		if (s[i] && s[i] != c)
 		{
 			count++;
@@ -71,14 +71,14 @@ int	ft_start_word(char *s, char c, int word)
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
-				i++;
+			i++;
 		if (s[i] && s[i] != c)
 		{
 			if (count == word)
 				break ;
 			count++;
 			while (s[i] && s[i] != c)
-					i++;
+				i++;
 		}
 	}
 	return (i);
@@ -96,7 +96,7 @@ int	ft_len_word(char *s, char c, int word)
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
-				i++;
+			i++;
 		if (s[i] && s[i] != c)
 		{
 			if (count == word)
@@ -107,7 +107,7 @@ int	ft_len_word(char *s, char c, int word)
 			}
 			count++;
 			while (s[i] && s[i] != c)
-					i++;
+				i++;
 		}
 	}
 	return (len);
@@ -121,13 +121,13 @@ char	**ft_split(char *s, char c)
 	int		start;
 	int		len;
 
-	words = ft_count_words(s, c);
-	i = 0;
+	(norme(), words = ft_count_words(s, c), i = 0);
 	tab = malloc(sizeof(char *) * (words + 1));
 	if (!tab)
 		return (NULL);
 	if (words == 0)
 	{
+		free(tab);
 		tab = NULL;
 		return (tab);
 	}

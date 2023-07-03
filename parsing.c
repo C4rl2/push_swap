@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:27:47 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/07/02 16:39:12 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/03 12:20:35 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	error_msg(char *str, t_push_swap *list, t_push_swap *a_list)
 		ft_putstr_fd("Error\n", 2);
 		ft_putstr_fd(str, 2);
 	}
-	system("leaks push_swap");
 	exit(1);
 }
 

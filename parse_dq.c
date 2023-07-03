@@ -6,7 +6,7 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 16:09:48 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/07/01 18:18:23 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/03 12:23:19 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char	*clean_str(char *s, t_push_swap *list, t_push_swap *a_list)
 		{
 			clear_list(&a_list);
 			error_msg(ERRLTR, 0, list);
-		}	
+		}
 	}
 	new_s[j] = '\0';
 	return (new_s);
@@ -85,7 +85,10 @@ t_push_swap	*fill_a(char *tmp, t_push_swap *a_list, t_push_swap *list)
 	i = 0;
 	tmp_tab = ft_split(tmp, ' ');
 	if (!tmp_tab)
-		error_msg(ERRSPLIT, list, NULL);
+	{
+		clear_a_list(&a_list);
+		error_msg(ERRSPLIT, 0, list);
+	}
 	while (tmp_tab[i])
 	{
 		value = secure_atoi(tmp_tab[i], a_list, list);
@@ -118,6 +121,5 @@ t_push_swap	*final_fill(t_push_swap *list)
 		free(tmp);
 		i++;
 	}
-	// clear_list(&list);
 	return (a_list);
 }

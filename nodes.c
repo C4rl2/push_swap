@@ -6,12 +6,11 @@
 /*   By: cafraixe <cafraixe@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 18:45:01 by cafraixe          #+#    #+#             */
-/*   Updated: 2023/07/01 18:17:24 by cafraixe         ###   ########.fr       */
+/*   Updated: 2023/07/03 12:20:10 by cafraixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <string.h>
 
 t_push_swap	*ft_lstnew(char *s)
 {
@@ -77,27 +76,6 @@ char	*ft_strdup(char *s1)
 	}
 	copy[i] = '\0';
 	return (copy);
-}
-
-void	print_list(t_push_swap *list) // DELETE THIS (DEBUG FUNCTION ONLY)
-{
-	t_push_swap	*tmp_list;
-
-	tmp_list = list;
-	while (tmp_list)
-	{
-		if (tmp_list->str == NULL)
-		{
-			printf("%i\n", tmp_list->value);
-			// printf("index = %i\n", tmp_list->index);
-		}
-		else
-		{
-			printf("%s\n", tmp_list->str);
-			// printf("index = %i\n", tmp_list->index);
-		}
-		tmp_list = tmp_list->next;
-	}
 }
 
 t_push_swap	*fill_list(int ac, char **av)
